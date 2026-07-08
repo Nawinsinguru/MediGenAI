@@ -1,0 +1,19 @@
+from pathlib import Path
+
+from langchain_community.document_loaders import PyPDFLoader
+
+
+class PDFLoader:
+
+    def load_pdf(self, file_path: str):
+
+        path = Path(file_path)
+
+        if not path.exists():
+            raise FileNotFoundError(f"{file_path} not found.")
+
+        loader = PyPDFLoader(str(path))
+
+        documents = loader.load()
+
+        return documents
