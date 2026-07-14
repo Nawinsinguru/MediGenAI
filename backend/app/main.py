@@ -14,6 +14,8 @@ from app.api.reports import router as report_router
 from app.api.upload import router as upload_router
 from app.models.chat_history import ChatHistory
 
+print("1 - main imported")
+
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
@@ -29,10 +31,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+
 app.include_router(auth_router)
+
+print("2 - database created")
+
+
 app.include_router(chat_router)
 app.include_router(report_router)
+
+print("3 - including chat router")
+
+
 app.include_router(upload_router)
+
+print("4 - routers loaded")
 
 # ==========================
 # Serve Vue Frontend
