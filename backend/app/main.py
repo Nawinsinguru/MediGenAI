@@ -38,13 +38,13 @@ app.include_router(auth_router)
 print("2 - database created")
 
 
-app.include_router(chat_router)
+#app.include_router(chat_router)
 app.include_router(report_router)
 
 print("3 - including chat router")
 
 
-app.include_router(upload_router)
+#app.include_router(upload_router)
 
 print("4 - routers loaded")
 
