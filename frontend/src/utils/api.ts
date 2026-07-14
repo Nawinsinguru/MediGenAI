@@ -1,7 +1,8 @@
 import axios from 'axios'
 import { useAuthStore } from '../stores/auth'
 
-const API_BASE_URL = 'http://localhost:8000'
+// const API_BASE_URL = 'http://localhost:8000'
+const API_BASE_URL = 'https://medigenai-p920.onrender.com'
 
 // revert code 
 // const api = axios.create({
