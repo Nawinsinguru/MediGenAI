@@ -5,13 +5,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
-from app.api.chat import router as chat_router
+#from app.api.chat import router as chat_router
 from app.core.settings import APP_NAME, APP_VERSION
 from app.database.database import Base, engine
 from app.models.user import User
 from app.api.auth import router as auth_router
 from app.api.reports import router as report_router
-from app.api.upload import router as upload_router
+#from app.api.upload import router as upload_router
 from app.models.chat_history import ChatHistory
 
 print("1 - main imported")
