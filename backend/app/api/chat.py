@@ -10,14 +10,14 @@ router = APIRouter(
     tags=["Hospital Chat"]
 )
 
-chat_service = HospitalChatService()
-
 
 @router.post("", response_model=ChatResponse)
 def chat(
     request: ChatRequest,
     current_user: User = Depends(get_current_user)
 ):
+    chat_service = HospitalChatService()   # Create only when API is called
+
     answer = chat_service.ask(request.question)
 
     return ChatResponse(
